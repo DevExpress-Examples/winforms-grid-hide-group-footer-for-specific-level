@@ -30,8 +30,11 @@ Namespace HideableGroupRowFooters
 			End If
 
 			Dim top As Integer = ri.TotalBounds.Bottom - height - ri.RowSeparatorBounds.Height
-			Dim left As Integer = ri.IndentRect.Right - (If((Not isShowCurrentFooter), LevelIndent, 0))
-			ri.RowFooters.Bounds = New Rectangle(left, top, ri.DataBounds.Right - left, height)
+            Dim left As Integer = ri.IndentRect.Right - (If((Not isShowCurrentFooter), LevelIndent, 0))
+            If IsRightToLeft Then
+                left = ri.TotalBounds.Left
+            End If
+            ri.RowFooters.Bounds = New Rectangle(left, top, ri.DataBounds.Right - left, height)
 
 			Dim n As Integer = 0
 			Do While n < ri.RowFooters.RowFooterCount
