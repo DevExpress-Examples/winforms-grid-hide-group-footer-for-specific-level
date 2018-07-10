@@ -32,7 +32,11 @@ namespace HideableGroupRowFooters
 
 			int top = ri.TotalBounds.Bottom - height - ri.RowSeparatorBounds.Height;
 			int left = ri.IndentRect.Right - (!isShowCurrentFooter ? LevelIndent : 0);
-			ri.RowFooters.Bounds = new Rectangle(left, top, ri.DataBounds.Right - left, height);
+            if (IsRightToLeft)
+            {
+                left = ri.TotalBounds.Left;
+            }
+            ri.RowFooters.Bounds = new Rectangle(left, top, ri.DataBounds.Right - left, height);
 
 			for ( int n = 0; n < ri.RowFooters.RowFooterCount; n++ )
 			{
