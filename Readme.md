@@ -4,7 +4,7 @@
 [![](https://img.shields.io/badge/📖_How_to_use_DevExpress_Examples-e9f6fc?style=flat-square)](https://docs.devexpress.com/GeneralInformation/403183)
 <!-- default badges end -->
 
-# WinForms Data Grid - Hide group footer for specific group level
+# WinForms Data Grid - Hide the group footer for a specific group level
 
 This example implements a custom grid control with the `ShowGroupFooter` event. This event allows you to hide the group footer based on a specific condition:
 
